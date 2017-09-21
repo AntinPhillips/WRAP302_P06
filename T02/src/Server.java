@@ -79,9 +79,9 @@ public class Server {
                 }
 
                 out.println("2");
+                Arrays.stream(game.getLines()).forEach(out::println);
                 out.println(scoreServer);
                 out.println(scoreClient);
-                Arrays.stream(game.getLines()).forEach(out::println);
                 String choiceClient = in.readLine();
 
                 System.out.println("Game Over");

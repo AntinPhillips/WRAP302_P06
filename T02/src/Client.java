@@ -46,7 +46,7 @@ public class Client {
                         int scoreServer = Integer.valueOf(in.readLine());
                         int scoreClient = Integer.valueOf(in.readLine());
                         System.out.println("Sever score: " + scoreServer);
-                        System.out.println("Sever client: " + scoreClient);
+                        System.out.println("Client score: " + scoreClient);
 
                         System.out.println("Would you like to play again? Y/N");
                         String choice = consoleIn.readLine();

@@ -4,6 +4,7 @@
 public class Game {
     String[][] values;
     boolean gameOver;
+    boolean draw = false;
 
     public Game() {
         values = new String[3][3];
@@ -12,6 +13,7 @@ public class Game {
                 values[r][c] = String.valueOf((r * 3) + c + 1);
 
         gameOver = false;
+        draw = false;
     }
 
     public boolean add(boolean cross, int pos) {
@@ -46,6 +48,19 @@ public class Game {
 
         if (one || two)
             gameOver = true;
+        else
+            checkDraw();
+    }
+
+    private void checkDraw()
+    {
+        for (int r = 0; r < 3; r++)
+            for (int c = 0; c < 3; c++)
+                if (!values[r][c].equals("X") && !values[r][c].equals("O"))
+                    return;
+
+        gameOver = true;
+        draw = true;
     }
 
     private boolean checkGameOverForLetter(String letter)

@@ -61,13 +61,12 @@ public class Server {
 
                         while (!game.add(true, Integer.valueOf(choice)))
                         {
-                            System.out.println("Entered value was not valid. Enter again.");
                             out.println("3");
                             choice = in.readLine();
                         }
                     }
 
-                    if (game.gameOver)
+                    if (game.gameOver && !game.draw)
                         if (curTurn == 0)
                             scoreServer++;
                         else
@@ -85,8 +84,12 @@ public class Server {
                 String choiceClient = in.readLine();
 
                 System.out.println("Game Over");
+
+                if (game.draw)
+                    System.out.println("Draw");
+
                 System.out.println("Sever score: " + scoreServer);
-                System.out.println("Sever client: " + scoreClient);
+                System.out.println("Client score: " + scoreClient);
                 System.out.println("Would you like to play again? Y/N");
                 String choiceServer = consoleIn.readLine();
 

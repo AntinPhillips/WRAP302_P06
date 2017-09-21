@@ -30,6 +30,7 @@ public class Client {
                 out.println(histogram.toString());
             }
 
+            socket.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
